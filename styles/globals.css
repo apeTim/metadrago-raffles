@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Teletactile';
+  src: url('/fonts/Teletactile.ttf');
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: url(https://lairs.metadrago.art/static/media/background.f8807e0b8fd634bbe9dc.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Teletactile';
+}
+
+body.scroll-lock {
+  overflow-y: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type='number']:focus {
+  outline: 1px solid #fff;
+}
+
+.wallet-adapter-button {
+  font-family: 'Teletactile' !important;
+  font-size: 13px!important;
+  line-height: 1.2!important;
+  font-weight: 400 !important;
+  margin-left: 5px;
+}
