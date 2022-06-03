@@ -204,13 +204,13 @@ export const ClosedRaffle: React.FC<ClosedRaffleProps> = (props) => {
                     <React.Fragment key={wallet}>
                       {wallet === publicKey?.toBase58() ? (
                         <WinnerRow title='you won! create a discord ticket'>
-                          <TD>{hideWallet(wallet)}</TD>
-                          <TD>{amount}</TD>
+                          <TD>{hideWallet(wallet)} </TD>
+                          <TD> won {amount}</TD>
                         </WinnerRow>
                       ) : (
                         <TR>
-                          <TD>{hideWallet(wallet)}</TD>
-                          <TD>{amount}</TD>
+                          <TD>{hideWallet(wallet)} </TD>
+                          <TD> won {amount}</TD>
                         </TR>
                       )}
                     </React.Fragment>
