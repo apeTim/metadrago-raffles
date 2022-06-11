@@ -2,9 +2,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   ConnectionProvider,
+  useWallet,
   WalletProvider,
 } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
@@ -22,10 +23,12 @@ import {
   WalletModalProvider,
   WalletDisconnectButton,
   WalletMultiButton,
+  useWalletModal,
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 import Market from '../components/market/Market';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { DiscordButton } from '../components/DiscordButton/DiscordButton';
 
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -52,6 +55,7 @@ const Home: NextPage = () => {
     ],
     [network]
   );
+
   return (
     <QueryClientProvider client={queryClient}>
       <ConnectionProvider endpoint={endpoint}>
@@ -59,9 +63,9 @@ const Home: NextPage = () => {
           <WalletModalProvider>
             <div className={styles.container}>
               <Head>
-                <title>Raffle System</title>
-                <meta name='description' content='Raffle System' />
-                <link rel='icon' href='/favicon.ico' />
+                <title>METADRAGO DAO</title>
+                <meta name='description' content='METADRAGO DAO' />
+                <link rel='icon' href='/favicon.webp' />
               </Head>
 
               <header
@@ -93,8 +97,11 @@ const Home: NextPage = () => {
                     DAO
                   </h2>
                 </a>
-                {/* <WalletDisconnectButton /> */}
-                <WalletMultiButton />
+                <div style={{ display: 'flex' }}>
+                  <DiscordButton />
+                  {/* <WalletDisconnectButton /> */}
+                  <WalletMultiButton />
+                </div>
               </header>
 
               <main className={styles.main}>
